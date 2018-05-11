@@ -10,7 +10,7 @@ After when you done a basic setup, we are going to install ruby.
 
 Here is a script: [languages_install.sh](https://github.com/vfreefly/dotfiles/blob/master/automation_scripts/ubuntu/languages_install.sh).
 
-Script contains setup for python, go, nodejs and ruby programming languages. You can install only one language, for this just provide a name of the function to execute, in our case (ruby) it will be: `$ languages_install.sh ruby_install`.
+Script contains setup for python, go, nodejs and ruby programming languages. You can install only one language, for this just provide a name of the function to execute, in our case (ruby) it will be: `$ bash languages_install.sh ruby_install`.
 
 For ruby setup script doing next things:
 1. Install ruby compilation dependencies
