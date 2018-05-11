@@ -70,12 +70,12 @@ Also there is an additional setup to restrict login to root user using password 
 ### Server installation scripts
 > All interactions should be done within sudo user created above, not `root` user.
 > All installations splitted into several bash scripts, which doing all setup for you.
-> After execution of each script, you need to update env variable of you current bash session: `$ exec $SHELL`
+> After execution of each script, you need to update env variables of you current bash session: `$ exec $SHELL`
 
 **Install basic utils**:
 First we'll install some command line tools, some of them are required for next setup, but some of them just handy to use in day to day server administration process.
 
-You can check the script here [base_install.sh](https://github.com/vfreefly/dotfiles/blob/master/dotfiles/automation_scripts/ubuntu/base_install.md):
+You can check the script here [base_install.sh](https://github.com/vfreefly/dotfiles/blob/master/automation_scripts/ubuntu/base_install.sh):
 
 Installation:
 ```bash

@@ -98,6 +98,9 @@ rbenv_install() {
 
   # update env variables
   source ~/.bashrc
+
+  # export rbenv path for further ruby installation using rbenv
+  export PATH="$HOME/.rbenv/bin:$PATH"
 }
 
 ruby_version_install() {
