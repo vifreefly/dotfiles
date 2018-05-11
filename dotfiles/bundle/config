@@ -1,0 +1,6 @@
+---
+BUNDLE_GIT__ALLOW_INSECURE: "true"
+BUNDLE_--JOBS: "3"
+BUNDLE_GEM__TEST: "minitest"
+BUNDLE_GEM__COC: "false"
+BUNDLE_JOBS: "4"

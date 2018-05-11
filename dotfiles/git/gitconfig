@@ -1,0 +1,19 @@
+[user]
+	name = Victor Afanasev
+	email = vicfreefly@gmail.com
+[core]
+	autocrlf = input
+[color]
+	ui = auto
+	branch = auto
+	diff = auto
+	status = auto
+[color "diff"]
+	meta = yellow bold
+
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	lg = log --format='%Cgreen%h %Cred%cd %Creset%s %Cblue%an%Cgreen%d' --date=relative

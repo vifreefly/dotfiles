@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# micro
+alias micro="TERM=xterm-256color micro"
+
+# tmux
+alias tmux="tmux -u"
+alias 256mux="TERM=screen-256color tmux -u"
+alias truemux="TERM=xterm-256color tmux -u"
+
+# ruby
+alias be="bundle exec"
+
+# ranger
+alias ranger="TERM=screen-256color ranger"
+
+# other
+alias ports="sudo netstat -n --tcp --listen -p"
+alias bracketed_paste_off='printf "\e[?2004l"'

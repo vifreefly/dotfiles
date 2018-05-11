@@ -1,0 +1,62 @@
+# https://github.com/anishathalye/dotbot#full-example
+# use: just './install'
+
+- defaults:
+    link:
+      relink: true
+      create: true
+      force: true
+
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: dotfiles/
+
+    ### basic ###
+    # tmux
+    ~/.tmux.conf: dotfiles/tmux.conf
+
+    # bash
+    ~/.bashrc_local: dotfiles/bash/bashrc_local
+    ~/.bash_aliases: dotfiles/bash/bash_aliases
+
+    # ssh
+    ~/.ssh/config: dotfiles/ssh/config
+
+    # git
+    ~/.gitconfig:        dotfiles/git/gitconfig
+    ~/.gitignore_global: dotfiles/git/gitignore_global
+
+    # micro
+    ~/.config/micro/settings.json: dotfiles/config/micro/settings.json
+    ~/.config/micro/bindings.json: dotfiles/config/micro/bindings.json
+
+    # ranger
+    ~/.config/ranger/rc.conf:     dotfiles/config/ranger/rc.conf
+    ~/.config/ranger/commands.py: dotfiles/config/ranger/commands.py
+    ~/.config/ranger/scope.sh:    dotfiles/config/ranger/scope.sh
+
+    # ruby
+    ~/.gemrc:         dotfiles/gemrc
+    ~/.bundle/config: dotfiles/bundle/config
+
+    # editorconfig
+    ~/.editorconfig: dotfiles/editorconfig
+
+    # lemonade config
+    ~/.config/lemonade.toml: dotfiles/config/lemonade.toml
+
+    ### linux desktop ###
+    # sublime text
+    ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings:     dotfiles/config/sublime-text-3/Preferences.sublime-settings
+    ~/.config/sublime-text-3/Packages/User/Ruby.sublime-settings:            dotfiles/config/sublime-text-3/Ruby.sublime-settings
+    ~/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap:   dotfiles/config/sublime-text-3/Default (Linux).sublime-keymap
+    ~/.config/sublime-text-3/Packages/User/Package Control.sublime-settings: dotfiles/config/sublime-text-3/Package Control.sublime-settings
+    ~/.config/sublime-text-3/Packages/toggle_whitespaces/draw_white_space_toggle.py: dotfiles/config/sublime-text-3/draw_white_space_toggle.py
+
+    # redshift config
+    ~/.config/redshift.conf: dotfiles/config/redshift.conf
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - ["if ! grep -q 'source ~/.bashrc_local' ~/.bashrc; then echo 'source ~/.bashrc_local' >> ~/.bashrc; fi", Source ~/.bashrc_local to ~/.bashrc if not contains]
