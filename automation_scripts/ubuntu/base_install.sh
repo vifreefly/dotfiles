@@ -11,7 +11,7 @@ basic_install() {
   sudo apt -y update
 
   echo "$(logger) Install basic utils..."
-  sudo apt install -q -y git wget curl tar zip file tree htop ssh bash-completion net-tools dpkg python-software-properties
+  sudo apt install -q -y git wget curl tar zip file tree htop ssh gnupg build-essential bash-completion net-tools dpkg python-software-properties
 }
 
 set_local_bin_path() {
@@ -32,6 +32,8 @@ configure_locale() {
   echo 'export LC_ALL="en_US.UTF-8"' >> ~/.bashrc
   echo "$(logger) exported locale variables to ~/.bashrc"
 }
+
+# to do add time configure
 
 # Modern XXI centry CLI text editor https://github.com/zyedidia/micro
 # It should be on any linux server by default
