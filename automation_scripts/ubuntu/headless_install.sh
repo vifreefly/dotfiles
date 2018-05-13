@@ -30,7 +30,7 @@ logger() {
 
 base_requirements() {
   echo "$(logger) Installing base requirements..."
-  sudo apt install -q -y zip wget tar
+  sudo apt install -q -y unzip wget tar
 }
 
 chromedriver_install() {
