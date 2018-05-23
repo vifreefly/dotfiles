@@ -33,7 +33,8 @@ configure_locale() {
   echo "$(logger) exported locale variables to ~/.bashrc"
 }
 
-# to do add time configure
+# to do add time zone configure (set to UTC always)
+# UTC it's a default time and should be by default on any server
 
 # Modern XXI centry CLI text editor https://github.com/zyedidia/micro
 # It should be on any linux server by default
