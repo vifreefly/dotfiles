@@ -53,6 +53,9 @@ node_js_install() {
 
   # update env variables
   source ~/.bashrc
+  # export nvm and node path for further installation
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
   # install latest stable lts release of node
   nvm install --lts
@@ -65,9 +68,13 @@ node_js_install() {
 
   # update env variables
   source ~/.bashrc
+  # export yarn path
+  export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+  # check yarn version
   echo "$(logger) Yarn installed, version: $(yarn -v)"
 
-  # ToDo: maybe it's a good idea to add alias from node to nodejs
+  # ToDo: maybe it's a good idea to add alias from node to nodejs (in ubuntu)
 }
 
 ### Ruby ###
@@ -98,7 +105,6 @@ rbenv_install() {
 
   # update env variables
   source ~/.bashrc
-
   # export rbenv path for further ruby installation using rbenv
   export PATH="$HOME/.rbenv/bin:$PATH"
 }
