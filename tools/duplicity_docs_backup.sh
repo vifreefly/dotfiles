@@ -9,14 +9,18 @@ logger() {
 # define all env variables for cron
 source $HOME/Dropbox/configs/env_secrets.sh
 
-# prepare notify-send
+# prepare notify-send to show notifications (linux desktop)
 export $(egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep -u $LOGNAME gnome-session)/environ)
 
 export XDEVICEFILES=1
+# passphrase for duplicity arcives
 export PASSPHRASE="$DUPLICITY_BACKUP_PASSPHRASE"
 
+# example "/home/username"
 ORIGIN="$DUPLICITY_ORIGIN"
+# example "webdavs://cloud_user:cloud_pass@webdav.yandex.ru/my_backups"
 DEST="$DUPLICITY_DEST"
+# example "~/Dropbox/duplicity_filters.txt"
 FILELIST="$DUPLICITY_FILTER_FILELIST_PATH"
 DAYS_FULL=6
 DAYS_STORE=30
@@ -24,6 +28,7 @@ DAYS_STORE=30
 echo "$(logger) Starting copyining backup... ($(date))"
 /usr/bin/notify-send 'Docs Backup' 'Starting copyining...' --icon=dialog-information
 
+# to make a dry run add --dry-run
 duplicity ${ORIGIN} ${DEST} \
           --full-if-older-than ${DAYS_FULL}D \
           --verbosity i \
@@ -40,3 +45,6 @@ unset PASSPHRASE
 
 echo "$(logger) All done! ($(date))"
 /usr/bin/notify-send 'Docs Backup' 'Finished.' --icon=dialog-information
+
+# done! To restore from command line, example:
+# PASSPHRASE=passphrase duplicity restore webdavs://cloud_user:cloud_pass@webdav.yandex.ru/my_backups ~/
