@@ -49,10 +49,13 @@
     ### linux desktop ###
     # sublime text
     ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings:     dotfiles/config/sublime-text-3/Preferences.sublime-settings
-    ~/.config/sublime-text-3/Packages/User/Ruby.sublime-settings:            dotfiles/config/sublime-text-3/Ruby.sublime-settings
     ~/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap:   dotfiles/config/sublime-text-3/Default (Linux).sublime-keymap
     ~/.config/sublime-text-3/Packages/User/Package Control.sublime-settings: dotfiles/config/sublime-text-3/Package Control.sublime-settings
     ~/.config/sublime-text-3/Packages/toggle_whitespaces/draw_white_space_toggle.py: dotfiles/config/sublime-text-3/draw_white_space_toggle.py
+    # syntax
+    ~/.config/sublime-text-3/Packages/User/Ruby.sublime-settings: dotfiles/config/sublime-text-3/Ruby.sublime-settings
+    ~/.config/sublime-text-3/Packages/User/Bash.sublime-settings: dotfiles/config/sublime-text-3/Bash.sublime-settings
+
 
     # redshift config
     ~/.config/redshift.conf: dotfiles/config/redshift.conf
