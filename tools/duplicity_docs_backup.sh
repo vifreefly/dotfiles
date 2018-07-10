@@ -47,4 +47,4 @@ echo "$(logger) All done! ($(date))"
 /usr/bin/notify-send 'Docs Backup' 'Finished.' --icon=dialog-information
 
 # done! To restore from command line, example:
-# PASSPHRASE=passphrase duplicity restore webdavs://cloud_user:cloud_pass@webdav.yandex.ru/my_backups ~/
+# PASSPHRASE=passphrase duplicity restore webdavs://cloud_user:cloud_pass@webdav.yandex.ru/my_backups ~/restore
