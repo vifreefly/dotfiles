@@ -44,3 +44,15 @@ checkdiff() {
                 {}
 FZF-EOF"
 }
+
+# proxy
+# localhost socks5 proxy tunnel, usage: `$ localproxy user@server_ip port_number`
+proxytunnel() {
+  autossh -fNTC -D $2 $1
+}
+
+# sshuttle, usage: `$ proxysshuttle user@server_ip`
+proxysshuttle() {
+  hostname=$(echo $1 | grep -oP '(?<=@).*')
+  sshuttle --dns --verbose --remote $1 --exclude $hostname 0/0
+}
