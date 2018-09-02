@@ -36,6 +36,12 @@ source $HOME/.dotfiles/bash/bash_prompt
 source $HOME/.dotfiles/bash/bash_aliases
 source $HOME/.dotfiles/bash/bash_functions
 
+###
+
+export LOCAL="true"
+
+###
+
 # source sensitive env variables not in git if exists
 if [ -f "$HOME/Dropbox/configs/env_secrets.sh" ] ; then
   source $HOME/Dropbox/configs/env_secrets.sh
