@@ -54,5 +54,5 @@ proxytunnel() {
 # sshuttle, usage: `$ proxysshuttle user@server_ip`
 proxysshuttle() {
   hostname=$(echo $1 | grep -oP '(?<=@).*')
-  sshuttle --dns --verbose --remote $1 --exclude $hostname 0/0
+  sshuttle --dns --python=/usr/bin/python3 --verbose --remote $1 --exclude $hostname 0/0
 }

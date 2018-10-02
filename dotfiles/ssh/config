@@ -1,5 +1,5 @@
 Host *
-     ForwardAgent no
+     ForwardAgent yes
      ForwardX11 no
      Port 22
      Protocol 2
