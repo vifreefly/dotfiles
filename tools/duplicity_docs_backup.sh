@@ -18,7 +18,9 @@ source $HOME/Dropbox/configs/env_secrets.sh
 # this script as root (`sudo crontab -e`), add /bin/egrep to visudo (`$ sudo visudo`),
 # `bob ALL=NOPASSWD: /bin/egrep` where bob is username.
 # Then use `export $(sudo -S egrep` instead of `export $(egrep` .
-export $(sudo -S egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep -u $LOGNAME gnome-session || pgrep -u $LOGNAME kdeinit | head -1)/environ)
+
+# export $(sudo -S egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep -u $LOGNAME gnome-session || pgrep -u $LOGNAME kdeinit | head -1)/environ)
+export $(xargs -0 -a "/proc/$(pgrep gnome-session -n -U $UID)/environ") # works for latest gnome
 
 export XDEVICEFILES=1
 # passphrase for duplicity arcives
