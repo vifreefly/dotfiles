@@ -32,8 +32,8 @@ ORIGIN="$DUPLICITY_ORIGIN"
 DEST="$DUPLICITY_DEST"
 # example "~/Dropbox/duplicity_filters.txt"
 FILELIST="$DUPLICITY_FILTER_FILELIST_PATH"
-DAYS_FULL=6
-DAYS_STORE=30
+DAYS_FULL=15
+DAYS_STORE=60
 
 echo "$(logger) Starting copyining backup... ($(date))"
 /usr/bin/notify-send 'Docs Backup' 'Starting copyining...' --icon=dialog-information

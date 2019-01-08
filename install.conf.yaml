@@ -57,6 +57,7 @@
     ~/.config/sublime-text-3/Packages/User/Bash.sublime-settings: dotfiles/config/sublime-text-3/Bash.sublime-settings
     # snippets
     ~/.config/sublime-text-3/Packages/User/bpry.sublime-snippet: dotfiles/config/sublime-text-3/bpry.sublime-snippet
+    ~/.config/sublime-text-3/Packages/User/bun.sublime-snippet:  dotfiles/config/sublime-text-3/bun.sublime-snippet
 
     # redshift config
     ~/.config/redshift.conf: dotfiles/config/redshift.conf

@@ -17,3 +17,5 @@ alias ranger="TERM=screen-256color ranger"
 # other
 alias ports="sudo netstat -n --tcp --listen -p"
 alias bracketed_paste_off='printf "\e[?2004l"'
+
+alias jcurl="curl -H 'Content-Type: application/json'"

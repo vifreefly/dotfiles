@@ -46,7 +46,7 @@ FZF-EOF"
 }
 
 # proxy
-# localhost socks5 proxy tunnel, usage: `$ localproxy user@server_ip port_number`
+# localhost socks5 proxy tunnel, usage: `$ proxytunnel user@server_ip port_number`
 proxytunnel() {
   autossh -fNTC -D $2 $1
 }
