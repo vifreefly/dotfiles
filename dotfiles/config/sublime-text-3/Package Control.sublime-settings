@@ -8,10 +8,13 @@
 		"A File Icon",
 		"All Autocomplete",
 		"Crystal",
+		"CSS Format",
 		"HTML-CSS-JS Prettify",
+		"Indent XML",
 		"MaxPane",
 		"Package Control",
 		"Pretty JSON",
-		"Theme - One Dark"
+		"Theme - One Dark",
+		"Vue Syntax Highlight"
 	]
 }
