@@ -57,6 +57,7 @@
     ~/.config/sublime-text-3/Packages/User/Bash.sublime-settings: dotfiles/config/sublime-text-3/Bash.sublime-settings
     ~/.config/sublime-text-3/Packages/User/JavaScript.sublime-settings: dotfiles/config/sublime-text-3/JavaScript.sublime-settings
     ~/.config/sublime-text-3/Packages/User/Vue Component.sublime-settings: dotfiles/config/sublime-text-3/Vue Component.sublime-settings
+    ~/.config/sublime-text-3/Packages/User/JSON.sublime-settings: dotfiles/config/sublime-text-3/JSON.sublime-settings
     # snippets
     ~/.config/sublime-text-3/Packages/User/bpry.sublime-snippet: dotfiles/config/sublime-text-3/bpry.sublime-snippet
     ~/.config/sublime-text-3/Packages/User/bun.sublime-snippet:  dotfiles/config/sublime-text-3/bun.sublime-snippet
