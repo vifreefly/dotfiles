@@ -28,8 +28,11 @@ export PASSPHRASE="$DUPLICITY_BACKUP_PASSPHRASE"
 
 # example "/home/username"
 ORIGIN="$DUPLICITY_ORIGIN"
+
 # example "webdavs://cloud_user:cloud_pass@webdav.yandex.ru/my_backups"
-DEST="$DUPLICITY_DEST"
+# DEST="$DUPLICITY_DEST"
+DEST="scp://deploy@135.181.26.23:/home/deploy/backup"
+
 # example "~/Dropbox/duplicity_filters.txt"
 FILELIST="$DUPLICITY_FILTER_FILELIST_PATH"
 DAYS_FULL=15

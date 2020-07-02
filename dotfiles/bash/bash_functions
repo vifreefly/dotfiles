@@ -56,3 +56,9 @@ proxysshuttle() {
   hostname=$(echo $1 | grep -oP '(?<=@).*')
   sshuttle --dns --python=/usr/bin/python3 --verbose --remote $1 --exclude $hostname 0/0
 }
+
+lib_install() {
+  mv $1 ~/.local/lib/
+  # ln -s ${LIB_PATH}/phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs ~/.local/bin
+  ln -s ~/.local/lib/$2 ~/.local/bin
+}

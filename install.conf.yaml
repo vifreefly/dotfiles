@@ -52,12 +52,16 @@
     ~/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap:   dotfiles/config/sublime-text-3/Default (Linux).sublime-keymap
     ~/.config/sublime-text-3/Packages/User/Package Control.sublime-settings: dotfiles/config/sublime-text-3/Package Control.sublime-settings
     ~/.config/sublime-text-3/Packages/toggle_whitespaces/draw_white_space_toggle.py: dotfiles/config/sublime-text-3/draw_white_space_toggle.py
-    # syntax
+    # Langs settings
     ~/.config/sublime-text-3/Packages/User/Ruby.sublime-settings: dotfiles/config/sublime-text-3/Ruby.sublime-settings
+    ~/.config/sublime-text-3/Packages/User/Crystal.sublime-settings: dotfiles/config/sublime-text-3/Crystal.sublime-settings
+    ~/.config/sublime-text-3/Packages/User/ecr.sublime-settings: dotfiles/config/sublime-text-3/ecr.sublime-settings
     ~/.config/sublime-text-3/Packages/User/Bash.sublime-settings: dotfiles/config/sublime-text-3/Bash.sublime-settings
     ~/.config/sublime-text-3/Packages/User/JavaScript.sublime-settings: dotfiles/config/sublime-text-3/JavaScript.sublime-settings
     ~/.config/sublime-text-3/Packages/User/Vue Component.sublime-settings: dotfiles/config/sublime-text-3/Vue Component.sublime-settings
     ~/.config/sublime-text-3/Packages/User/JSON.sublime-settings: dotfiles/config/sublime-text-3/JSON.sublime-settings
+    # Syntax
+    ~/.config/sublime-text-3/Packages/User/ecr.sublime-syntax: dotfiles/config/sublime-text-3/ecr.sublime-syntax
     # snippets
     ~/.config/sublime-text-3/Packages/User/bpry.sublime-snippet: dotfiles/config/sublime-text-3/bpry.sublime-snippet
     ~/.config/sublime-text-3/Packages/User/bun.sublime-snippet:  dotfiles/config/sublime-text-3/bun.sublime-snippet
