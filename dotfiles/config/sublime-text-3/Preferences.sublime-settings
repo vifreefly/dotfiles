@@ -1,4 +1,7 @@
 {
+	"themed_title_bar": true,
+	"gtk_client_side_window_decorations": false,
+	"auto_hide_menu": false,
 	"always_show_minimap_viewport": true,
 	"animation_enabled": false,
 	"binary_file_patterns":
