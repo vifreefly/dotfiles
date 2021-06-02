@@ -38,7 +38,6 @@
 	"ignored_packages":
 	[
 		"CSS Format",
-		"MaxPane",
 		"Vintage",
 	],
 	"line_padding_bottom": 1,

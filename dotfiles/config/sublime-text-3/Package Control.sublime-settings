@@ -13,12 +13,13 @@
 		"Dockerfile Syntax Highlighting",
 		"Indent XML",
 		"MaxPane",
+		"Origami",
 		"Package Control",
 		"Pretty JSON",
 		"Ruby Slim",
 		"SCSS",
 		"Tailwind CSS Autocomplete",
 		"Theme - One Dark",
-		"Vue Syntax Highlight"
+		"Vue Syntax Highlight",
 	],
 }
