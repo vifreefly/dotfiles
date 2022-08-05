@@ -1,0 +1,33 @@
+%YAML 1.2
+---
+name: ECR
+file_extensions:
+  - ecr
+scope: source.ecr
+
+contexts:
+  main:
+    - match: ''
+      push: scope:text.html.basic
+      with_prototype:
+        - match: <%(?i:-|=|-=)?(?![^?]*\?>)
+          scope: punctuation.section.embedded.begin.ecr
+          push:
+            - meta_scope: meta.embedded.block.ecr
+            - meta_content_scope: source.crystal
+            - include: ecr-end-tag-pop
+            - include: scope:source.crystal
+        - match: <%(?i:-|=|-=)?
+          scope: punctuation.section.embedded.begin.ecr
+          push:
+            - meta_scope: meta.embedded.line.ecr
+            - meta_content_scope: source.crystal
+            - include: ecr-end-tag-pop
+            - include: scope:source.crystal
+
+  ecr-end-tag-pop:
+    - match: (%>)(\s*\n)?
+      captures:
+        1: punctuation.section.embedded.end.ecr
+        2: meta.html-newline-after-ecr.ecr
+      pop: true

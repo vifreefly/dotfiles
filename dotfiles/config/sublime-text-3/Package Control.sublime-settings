@@ -1,0 +1,25 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"All Autocomplete",
+		"Better CoffeeScript",
+		"Crystal",
+		"CSS Format",
+		"Dockerfile Syntax Highlighting",
+		"Indent XML",
+		"MaxPane",
+		"Origami",
+		"Package Control",
+		"Pretty JSON",
+		"Ruby Slim",
+		"SCSS",
+		"Tailwind CSS Autocomplete",
+		"Theme - One Dark",
+		"Vue Syntax Highlight",
+	],
+}

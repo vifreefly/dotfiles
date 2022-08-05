@@ -1,0 +1,18 @@
+{
+    "CtrlLeft":       "WordLeft",
+    "CtrlRight":      "WordRight",
+    "CtrlUp":         "MoveLinesUp",
+    "CtrlDown":       "MoveLinesDown",
+    "CtrlShiftRight": "SelectWordRight",
+    "CtrlShiftLeft":  "SelectWordLeft",
+
+    "AltLeft":        "StartOfLine",
+    "AltRight":       "EndOfLine",
+    "AltUp":          "CursorStart",
+    "AltDown":        "CursorEnd",
+
+    "Alt-[":   "PreviousTab",
+    "Alt-]":       "NextTab",
+
+    "Escape": "RemoveAllMultiCursors"
+}

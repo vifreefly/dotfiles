@@ -1,0 +1,9 @@
+Host *
+     ForwardAgent yes
+     ForwardX11 no
+     Port 22
+     Protocol 2
+     ServerAliveInterval 10
+     ServerAliveCountMax 5
+     Compression no
+

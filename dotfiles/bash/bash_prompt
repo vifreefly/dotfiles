@@ -1,0 +1,19 @@
+#!/bin/bash
+
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
+}
+
+PROMPT_DIRTRIM=4
+
+reset="\[\033[0m\]"
+user_color="\[\033[01;32m\]"
+host_color="\[\033[1;33m\]"
+path_color="\[\033[01;34m\]"
+bold="\[\033[1m\]"
+
+if [ -n "$SSH_CLIENT" ]; then
+  PS1="${host_color}\u@\h:${reset}${path_color}[\w]${reset}${bold}\$(parse_git_branch)${reset} "
+else
+  PS1="${user_color}\u:${reset}${path_color}[\w]${reset}${bold}\$(parse_git_branch)${reset} "
+fi

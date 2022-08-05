@@ -1,0 +1,31 @@
+#!/bin/bash
+
+transfer() {
+  tmpfile=$( mktemp -t transferXXX )
+  curl --progress-bar --upload-file $1 https://transfer.sh/$(basename $1) >> $tmpfile;
+  cat $tmpfile;
+  rm -f $tmpfile;
+}
+
+mkcd() {
+  last=$(eval "echo \$$#")
+  if [ ! -n "$last" ]; then
+    echo "Enter a directory name"
+  elif [ -d $last ]; then
+    echo "\`$last' already exists"
+  else
+    mkdir $@ && cd $last
+  fi
+}
+
+# proxy
+# localhost socks5 proxy tunnel, usage: `$ proxytunnel user@server_ip port_number`
+proxytunnel() {
+  autossh -fNTC -D $2 $1
+}
+
+# sshuttle, usage: `$ proxysshuttle user@server_ip`
+proxysshuttle() {
+  hostname=$(echo $1 | grep -oP '(?<=@).*')
+  sshuttle --dns --python=/usr/bin/python3 --verbose --remote $1 --exclude $hostname 0/0
+}

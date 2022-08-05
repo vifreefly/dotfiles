@@ -1,0 +1,48 @@
+#!/bin/bash
+
+### ToDo add go and ruby paths
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+  PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Proper locale
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US:en
+export LC_ALL=en_US.UTF-8
+
+# don't export term
+TERM=xterm-256color
+export EDITOR=micro
+
+# for Ranger's pager to show colors in preview
+export PAGER="less"
+export LESS=-r
+
+## Fzf settings
+export FZF_DEFAULT_COMMAND='fd --hidden --no-ignore --follow --exclude .git --color=always'
+export FZF_CTRL_T_COMMAND='fd --hidden --no-ignore --follow --exclude .git --color=always'
+export FZF_ALT_C_COMMAND="fd -t d --hidden --no-ignore --exclude .git"
+
+export FZF_DEFAULT_OPTS="--reverse --height 90% --ansi"
+export FZF_CTRL_T_OPTS="--preview '(! [[ \$(POSIXLY_CORRECT=1 file --mime {}) =~ text|directory|x-empty ]] &&  mediainfo {} | head -100) || ([[ \$(file --mime {}) =~ directory ]] && tree -C {}) || ((highlight --out-format=xterm256 --style=moria {} || cat {}) 2> /dev/null | head -500)'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -500'"
+export FZF_CTRL_R_OPTS=" --preview 'echo {}' --preview-window down:4:wrap"
+
+###
+
+source $HOME/.dotfiles/bash/bash_prompt
+source $HOME/.dotfiles/bash/bash_aliases
+source $HOME/.dotfiles/bash/bash_functions
+
+###
+
+export LOCAL="true"
+
+###
+
+# source sensitive env variables not in git if exists
+if [ -f "$HOME/Dropbox/configs/env_secrets.sh" ] ; then
+  source $HOME/Dropbox/configs/env_secrets.sh
+fi
