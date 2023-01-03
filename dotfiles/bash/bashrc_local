@@ -46,3 +46,8 @@ export LOCAL="true"
 if [ -f "$HOME/Dropbox/configs/env_secrets.sh" ] ; then
   source $HOME/Dropbox/configs/env_secrets.sh
 fi
+
+###
+
+# Add direnv
+eval "$(direnv hook bash)"

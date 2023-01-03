@@ -1,18 +1,17 @@
 {
-    "CtrlLeft":       "WordLeft",
-    "CtrlRight":      "WordRight",
-    "CtrlUp":         "MoveLinesUp",
-    "CtrlDown":       "MoveLinesDown",
+    "Alt-/": "lua:comment.comment",
+    "Alt-[": "PreviousTab",
+    "Alt-]": "NextTab",
+    "AltDown": "CursorEnd",
+    "AltLeft": "StartOfLine",
+    "AltRight": "EndOfLine",
+    "AltUp": "CursorStart",
+    "CtrlDown": "MoveLinesDown",
+    "CtrlLeft": "WordLeft",
+    "CtrlRight": "WordRight",
+    "CtrlShiftLeft": "SelectWordLeft",
     "CtrlShiftRight": "SelectWordRight",
-    "CtrlShiftLeft":  "SelectWordLeft",
-
-    "AltLeft":        "StartOfLine",
-    "AltRight":       "EndOfLine",
-    "AltUp":          "CursorStart",
-    "AltDown":        "CursorEnd",
-
-    "Alt-[":   "PreviousTab",
-    "Alt-]":       "NextTab",
-
+    "CtrlUnderscore": "lua:comment.comment",
+    "CtrlUp": "MoveLinesUp",
     "Escape": "RemoveAllMultiCursors"
 }
