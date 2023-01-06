@@ -22,7 +22,7 @@
 	{ "keys": ["alt+shift+down"], "command": "carry_file_to_pane", "args": {"direction": "down"} },
 	{ "keys": ["alt+shift+left"], "command": "carry_file_to_pane", "args": {"direction": "left"} },
 
-	{ "keys": ["f8"], "command": "toggle_white_space" },
+	// { "keys": ["f8"], "command": "toggle_white_space" },
 	{ "keys": ["ctrl+shift+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line Before.sublime-macro"} }
 
 ]

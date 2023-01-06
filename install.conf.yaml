@@ -13,6 +13,9 @@
     ~/.dotfiles: dotfiles/
 
     ### basic ###
+    # alacritty
+    ~/.config/alacritty/alacritty.yml: dotfiles/config/alacritty/alacritty.yml
+
     # tmux
     ~/.tmux.conf: dotfiles/tmux.conf
 
@@ -28,8 +31,8 @@
     ~/.gitignore_global: dotfiles/git/gitignore_global
 
     # micro
-    ~/.config/micro/settings.json: dotfiles/config/micro/settings.json
-    ~/.config/micro/bindings.json: dotfiles/config/micro/bindings.json
+    # ~/.config/micro/settings.json: dotfiles/config/micro/settings.json
+    # ~/.config/micro/bindings.json: dotfiles/config/micro/bindings.json
 
     # ruby
     ~/.gemrc:         dotfiles/gemrc
@@ -39,11 +42,14 @@
     ~/.editorconfig: dotfiles/editorconfig
 
     ### linux desktop ###
+- defaults:
+    link:
+      if: '[ "$(uname -s)" = "Linux" ]'
+- link:
     # sublime text
     ~/.config/sublime-text/Packages/User/Preferences.sublime-settings:     dotfiles/config/sublime-text-3/Preferences.sublime-settings
     ~/.config/sublime-text/Packages/User/Default (Linux).sublime-keymap:   dotfiles/config/sublime-text-3/Default (Linux).sublime-keymap
     ~/.config/sublime-text/Packages/User/Package Control.sublime-settings: dotfiles/config/sublime-text-3/Package Control.sublime-settings
-    ~/.config/sublime-text/Packages/toggle_whitespaces/draw_white_space_toggle.py: dotfiles/config/sublime-text-3/draw_white_space_toggle.py
     # Langs settings
     ~/.config/sublime-text/Packages/User/Ruby.sublime-settings: dotfiles/config/sublime-text-3/Ruby.sublime-settings
     ~/.config/sublime-text/Packages/User/Crystal.sublime-settings: dotfiles/config/sublime-text-3/Crystal.sublime-settings
@@ -58,6 +64,36 @@
     ~/.config/sublime-text/Packages/User/bpry.sublime-snippet: dotfiles/config/sublime-text-3/bpry.sublime-snippet
     ~/.config/sublime-text/Packages/User/bun.sublime-snippet:  dotfiles/config/sublime-text-3/bun.sublime-snippet
 
+- defaults:
+    link:
+      if: '[ "$(uname -s)" = "Darwin" ]'
+- link:
+    # sublime text
+    ~/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings: dotfiles/config/sublime-text-3/Preferences.sublime-settings
+    ~/Library/Application Support/Sublime Text/Packages/User/Default (OSX).sublime-keymap: dotfiles/config/sublime-text-3/Default (OSX).sublime-keymap
+    ~/Library/Application Support/Sublime Text/Packages/User/Package Control.sublime-settings: dotfiles/config/sublime-text-3/Package Control.sublime-settings
+
+    # # Langs settings
+    # ~/.config/sublime-text/Packages/User/Ruby.sublime-settings: dotfiles/config/sublime-text-3/Ruby.sublime-settings
+    ~/Library/Application Support/Sublime Text/Packages/User/Ruby.sublime-settings: dotfiles/config/sublime-text-3/Ruby.sublime-settings
+    ~/Library/Application Support/Sublime Text/Packages/User/Crystal.sublime-settings: dotfiles/config/sublime-text-3/Crystal.sublime-settings
+    ~/Library/Application Support/Sublime Text/Packages/User/ecr.sublime-settings: dotfiles/config/sublime-text-3/ecr.sublime-settings
+    ~/Library/Application Support/Sublime Text/Packages/User/Bash.sublime-settings: dotfiles/config/sublime-text-3/Bash.sublime-settings
+    ~/Library/Application Support/Sublime Text/Packages/User/JavaScript.sublime-settings: dotfiles/config/sublime-text-3/JavaScript.sublime-settings
+    ~/Library/Application Support/Sublime Text/Packages/User/Vue Component.sublime-settings: dotfiles/config/sublime-text-3/Vue Component.sublime-settings
+    ~/Library/Application Support/Sublime Text/Packages/User/JSON.sublime-settings: dotfiles/config/sublime-text-3/JSON.sublime-settings
+    # # Syntax
+    ~/Library/Application Support/Sublime Text/Packages/User/ecr.sublime-syntax: dotfiles/config/sublime-text-3/ecr.sublime-syntax
+    # # snippets
+    ~/Library/Application Support/Sublime Text/Packages/User/bpry.sublime-snippet: dotfiles/config/sublime-text-3/bpry.sublime-snippet
+    ~/Library/Application Support/Sublime Text/Packages/User/bun.sublime-snippet:  dotfiles/config/sublime-text-3/bun.sublime-snippet
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - ["if ! grep -q 'source ~/.bashrc_local' ~/.bashrc; then echo 'source ~/.bashrc_local' >> ~/.bashrc; fi", Source ~/.bashrc_local to ~/.bashrc if not contains]
+  - ["if ! grep -q 'source ~/.bashrc_local' ~/.bashrc; then echo 'source ~/.bashrc_local' >> ~/.bashrc; fi", Source ~/.bashrc_local to ~/.bashrc if not contains for Linux]
+  - ["if ! grep -q 'source ~/.bashrc_local' ~/.zshrc; then echo 'source ~/.bashrc_local' >> ~/.zshrc; fi", Source ~/.bashrc_local to ~/.zshrc if not contains, for Mac]
+
+
+
+
+

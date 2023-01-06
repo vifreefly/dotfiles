@@ -19,3 +19,8 @@
 	lg = log --format='%Cgreen%h %Cred%cd %Creset%s %Cblue%an%Cgreen%d' --date=relative
 [credential]
 	helper = store
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

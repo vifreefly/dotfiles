@@ -20,34 +20,32 @@ export EDITOR=micro
 export PAGER="less"
 export LESS=-r
 
-## Fzf settings
-export FZF_DEFAULT_COMMAND='fd --hidden --no-ignore --follow --exclude .git --color=always'
-export FZF_CTRL_T_COMMAND='fd --hidden --no-ignore --follow --exclude .git --color=always'
-export FZF_ALT_C_COMMAND="fd -t d --hidden --no-ignore --exclude .git"
-
-export FZF_DEFAULT_OPTS="--reverse --height 90% --ansi"
-export FZF_CTRL_T_OPTS="--preview '(! [[ \$(POSIXLY_CORRECT=1 file --mime {}) =~ text|directory|x-empty ]] &&  mediainfo {} | head -100) || ([[ \$(file --mime {}) =~ directory ]] && tree -C {}) || ((highlight --out-format=xterm256 --style=moria {} || cat {}) 2> /dev/null | head -500)'"
-export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -500'"
-export FZF_CTRL_R_OPTS=" --preview 'echo {}' --preview-window down:4:wrap"
-
 ###
 
-source $HOME/.dotfiles/bash/bash_prompt
 source $HOME/.dotfiles/bash/bash_aliases
 source $HOME/.dotfiles/bash/bash_functions
 
-###
+### prompt ###
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
+}
 
-export LOCAL="true"
+# zsh
+COLOR_DEF=$'%f'
+COLOR_USR=$'%F{243}'
+COLOR_DIR=$'%F{197}'
+COLOR_GIT=$'%F{39}'
+setopt PROMPT_SUBST
+# export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} $ '
+export PROMPT='${COLOR_DIR}%~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} $ '
 
-###
+# bash
+# PROMPT_DIRTRIM=4
+# reset="\[\033[0m\]"
+# user_color="\[\033[01;32m\]"
+# host_color="\[\033[1;33m\]"
+# path_color="\[\033[01;34m\]"
+# bold="\[\033[1m\]"
+# PS1="${user_color}\u:${reset}${path_color}[\w]${reset}${bold}\$(parse_git_branch)${reset} "
+### ###
 
-# source sensitive env variables not in git if exists
-if [ -f "$HOME/Dropbox/configs/env_secrets.sh" ] ; then
-  source $HOME/Dropbox/configs/env_secrets.sh
-fi
-
-###
-
-# Add direnv
-eval "$(direnv hook bash)"
