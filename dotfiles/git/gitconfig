@@ -17,6 +17,7 @@
 	co = checkout
 	br = branch
 	lg = log --format='%Cgreen%h %Cred%cd %Creset%s %Cblue%an%Cgreen%d' --date=relative
+	undo = reset --soft HEAD~1
 [credential]
 	helper = store
 [filter "lfs"]
